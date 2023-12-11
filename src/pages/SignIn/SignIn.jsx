@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Footer } from '../../containers';
 
-const SignIn = () => {
+const SignIn = ({ setIsLoggedIn }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
@@ -16,10 +16,11 @@ const SignIn = () => {
     console.log('Username:', username);
     console.log('Password:', password);
     console.log('Remember Me:', rememberMe);
+    setIsLoggedIn(true)
   };
 
   return (
-    <div className="container mt-5" style={{color:'white',paddingTop:'3rem'}}>
+    <div className="container" style={{color:'white',paddingTop:'6rem'}}>
       <div className="row justify-content-center">
         <div className="col-md-6">
           <h2 className="mb-4"style={{textAlign:'center'}}>Sign In</h2>
@@ -62,7 +63,7 @@ const SignIn = () => {
                 Remember Me
               </label>
             </div>
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary" onClick={handleSignIn}>
               <Link to='/'>Sign In</Link>
             </button>
           </form>

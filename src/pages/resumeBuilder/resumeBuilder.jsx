@@ -85,12 +85,12 @@ function PdfReader() {
         
           const generateCoverLetter = async (resumeText) => {
             try {
-              const APIKEY = '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';
+              const APIKEY = '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';
               const response = await axios.post(
                 'https://api.openai.com/v1/engines/text-davinci-003/completions',
                 {
                   prompt: `You are an HR professional with 20 years experience interviewing candidates and selecting the most suitable ones. I want you to help me write a short and compelling cover letter to ${input2} that will help me stand out from the crowd of applicants for ${input1}. Write it in a conversational and human style without being disrespectful. Do not use jargon or corporate language. Write in the way two friendly people would talk to each other. And show that you understand the pressure of the recruiter finding the right person for the job. Make the letter specific to the ${input3} so that it shows my interest and understanding. Talk about the relevant ${pdfText} that make me suitable for the role. And make it unlike a standard cover letter so that it doesn't blend in with everyone else's application. Make the letter no longer than 500 words.Remember use the name from the ${pdfText}.`,
-                  max_tokens: 1000, // Adjust as needed
+                  max_tokens: 1000, 
                   temperature: 0.4,
                 },
                 {
@@ -192,7 +192,6 @@ function PdfReader() {
             value={coverLetter}
             style={{ background: 'white', padding: '10px', borderRadius: '5px', overflow: 'auto', height: '100vh' }}
           />
-
         </div>
       </div>
     </div>

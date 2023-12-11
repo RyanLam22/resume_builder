@@ -8,7 +8,7 @@ const ChatGPTTest = () => {
 
   const handleGenerateResponse = async () => {
     try {
-      const APIKEY = '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';
+      const APIKEY = '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';
       const response = await axios.post(
         apiEndpoint,
         {
